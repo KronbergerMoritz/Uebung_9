@@ -32,6 +32,6 @@
       <Label text="Password:" GridPane.rowIndex="5" />
       <TextField fx:id="username" GridPane.rowIndex="3" />
       <Label text="Username:" GridPane.rowIndex="2" />
-      <Label GridPane.rowIndex="9" fx:id="l"/>
+      <Label fx:id="l" GridPane.rowIndex="9" />
    </children>
 </GridPane>

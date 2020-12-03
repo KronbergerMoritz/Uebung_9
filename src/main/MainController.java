@@ -16,7 +16,7 @@ public class MainController implements Initializable {
     private Label lmagicball;
 
     @FXML
-    private TextField question;
+    private TextField tfquestion;
 
     private String myData = "";
 
@@ -25,6 +25,18 @@ public class MainController implements Initializable {
         System.out.println("(MainController) Data received: " + this.myData);
 
 
+    }
+
+    @FXML
+    private void ask()
+    {
+        String question = tfquestion.getText();
+
+        if(question.equals("?"))
+        {
+            lmagicball.setText("No");
+            lmagicball.setStyle("-fx-text-fill: red;");
+        }
     }
 
 
