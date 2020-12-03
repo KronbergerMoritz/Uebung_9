@@ -8,9 +8,9 @@
 <AnchorPane prefHeight="400.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
    <children>
       <Label layoutX="68.0" layoutY="50.0" text="Magic Ball says..." />
-      <TextField layoutX="68.0" layoutY="94.0" fx:id="answer"/>
       <Label layoutX="68.0" layoutY="148.0" text="Write a question" />
-      <TextField layoutX="68.0" layoutY="166.0" fx:id="question"/>
-      <Button layoutX="68.0" layoutY="200.0" mnemonicParsing="false" text="Ask" fx:id="btnAnswer" onMouseClicked="#ask"/>
+      <TextField fx:id="question" layoutX="68.0" layoutY="166.0" />
+      <Button layoutX="68.0" layoutY="200.0" mnemonicParsing="false" text="Ask" />
+      <Label layoutX="68.0" layoutY="99.0" fx:id="lmagicball"/>
    </children>
 </AnchorPane>

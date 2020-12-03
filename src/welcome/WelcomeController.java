@@ -40,6 +40,7 @@ public class WelcomeController implements Initializable {
     private void next()
     {
 
+    try{
         String name = username.getText();
         String pw = password.getText();
 
@@ -55,6 +56,7 @@ public class WelcomeController implements Initializable {
     {
         l.setStyle("-fx-text-fill: red;");
         l.setText("Username missing");
+
     }
     else if(pw.equals(""))
     {
@@ -62,16 +64,15 @@ public class WelcomeController implements Initializable {
         l.setText("Password missing");
     }
 
-    else if(name.equals("user") && pw.equals("password"))
-    {
+    else if(name.equals("user") && pw.equals("password")) {
 
 
-            l.setStyle("-fx-text-fill: green;");
-            l.setText("Correct!!");
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main.fxml"));
-            Parent root = null;
-            
-        //send data to MainController
+        l.setStyle("-fx-text-fill: green;");
+        l.setText("Correct");
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main/main.fxml"));
+            Parent root = fxmlLoader.load();
+
             MainController ctrl = fxmlLoader.getController();
             ctrl.setMyData("Hello from Welcome Controller!");
 
@@ -81,16 +82,19 @@ public class WelcomeController implements Initializable {
             mainStage.show();
 
             this.stage.close();
-    }
 
+    }
     else
     {
         l.setStyle("-fx-text-fill: red;");
-        l.setText("Wrong Password");
+        l.setText("Wrong Password or Username");
+        password.setText("");
+
     }
-
-
-
+    }
+    catch (Exception ex) {
+        System.out.println("Exception occured while loading main view!");
+    }
 
      }
 
