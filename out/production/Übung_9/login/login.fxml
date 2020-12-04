@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="welcome.WelcomeController">
+<GridPane alignment="center" hgap="10" prefHeight="180.0" prefWidth="173.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -27,11 +27,11 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Button fx:id="btnNext" mnemonicParsing="false" onMouseClicked="#next" text="Login" GridPane.rowIndex="8" />
-      <PasswordField fx:id="password" GridPane.rowIndex="6" />
-      <Label text="Password:" GridPane.rowIndex="5" />
-      <TextField fx:id="username" GridPane.rowIndex="3" />
-      <Label text="Username:" GridPane.rowIndex="2" />
-      <Label fx:id="l" GridPane.rowIndex="9" />
+      <Button fx:id="btnLogin" mnemonicParsing="false" onMouseClicked="#login" text="Login" GridPane.rowIndex="8" />
+      <PasswordField fx:id="tfpassword" promptText="Password" GridPane.rowIndex="6" />
+      <Label GridPane.rowIndex="5" />
+      <TextField fx:id="tfusername" promptText="Username" GridPane.rowIndex="5" />
+      <Label GridPane.rowIndex="2" />
+      <Label fx:id="lMessage" GridPane.rowIndex="9" />
    </children>
 </GridPane>

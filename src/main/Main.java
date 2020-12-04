@@ -10,11 +10,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/welcome/welcome.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
         Parent root = fxmlLoader.load();
 
         //get controller which is connected to this fxml file
-        welcome.WelcomeController ctrl = fxmlLoader.getController();
+        login.LoginController ctrl = fxmlLoader.getController();
         ctrl.setStage(primaryStage);
 
         primaryStage.setTitle("Welcome");

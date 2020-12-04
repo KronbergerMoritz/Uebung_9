@@ -1,4 +1,4 @@
-package welcome;
+package login;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,13 +9,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.MainController;
+import maincontroller.MainController;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WelcomeController implements Initializable {
+public class LoginController implements Initializable {
 
     private Stage stage;
 
@@ -28,49 +27,47 @@ public class WelcomeController implements Initializable {
 
     }
     @FXML
-    private TextField username;
+    private TextField tfusername;
 
     @FXML
-    private PasswordField password;
+    private PasswordField tfpassword;
 
     @FXML
-    Label l = new Label();
+    Label lMessage = new Label();
 
     @FXML
-    private void next()
+    private void login()
     {
 
     try{
-        String name = username.getText();
-        String pw = password.getText();
-
-
+        String name = tfusername.getText();
+        String pw = tfpassword.getText();
 
     if(name.equals("") && pw.equals(""))
     {
-        l.setStyle("-fx-text-fill: red;");
-        l.setText("Password and Username missing");
+        lMessage.setStyle("-fx-text-fill: red;");
+        lMessage.setText("Password and Username missing");
     }
 
     else if(name.equals(""))
     {
-        l.setStyle("-fx-text-fill: red;");
-        l.setText("Username missing");
+        lMessage.setStyle("-fx-text-fill: red;");
+        lMessage.setText("Username missing");
 
     }
     else if(pw.equals(""))
     {
-        l.setStyle("-fx-text-fill: red;");
-        l.setText("Password missing");
+        lMessage.setStyle("-fx-text-fill: red;");
+        lMessage.setText("Password missing");
     }
 
     else if(name.equals("user") && pw.equals("password")) {
 
 
-        l.setStyle("-fx-text-fill: green;");
-        l.setText("Correct");
+        lMessage.setStyle("-fx-text-fill: green;");
+        lMessage.setText("Correct");
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main/main.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/maincontroller/main.fxml"));
             Parent root = fxmlLoader.load();
 
             MainController ctrl = fxmlLoader.getController();
@@ -86,9 +83,9 @@ public class WelcomeController implements Initializable {
     }
     else
     {
-        l.setStyle("-fx-text-fill: red;");
-        l.setText("Wrong Password or Username");
-        password.setText("");
+        lMessage.setStyle("-fx-text-fill: red;");
+        lMessage.setText("Wrong Password or Username");
+        tfpassword.setText("");
 
     }
     }
