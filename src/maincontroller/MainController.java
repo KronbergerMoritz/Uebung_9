@@ -36,7 +36,7 @@ public class MainController implements Initializable {
     private void ask()
     {
 
-        
+
         String question = tfquestion.getText();
 
         if(question.equals("Maxi?"))
